@@ -1,19 +1,9 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: dotnet:2.2-sdk
-    steps:
-      - checkout
-      - run:
-          name: Restore
-          command: dotnet restore src
-      - run:
-          name: Build
-          command: dotnet build src -c Release /p:BuildNumber=${CIRCLE_BUILD_NUM}
-      - run:
-          name: Pack
-          command: dotnet pack src/Provausio.Common/Provausio.Common.csproj
-      - run:
-          name: Push NuGet packages
-          command: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key ${PROV_NUGET_KEY}
+    build:
+      docker:
+        - image: docker:17.05.0-ce-git
+      steps:
+        - checkout  
+        - setup_remote_docker
+        - docker build -t build-only --build-arg build_number=${CIRCLE_BUILD_NUM} --build-arg nuget_key=${PROV_NUGET_KEY}
