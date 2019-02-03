@@ -19,5 +19,5 @@ jobs:
             command: dotnet test src
         - run:
             name: Publish NuGet Packages
-            command: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key ${PROV_NUGET_KEY}
+            command: dotnet nuget push src/**/bin/Release/**.nupkg --source https://api.nuget.org/v3/index.json --api-key ${PROV_NUGET_KEY}
         
