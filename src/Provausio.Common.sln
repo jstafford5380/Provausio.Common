@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Provausio.Common", "Provausio.Common\Provausio.Common.csproj", "{7D58F832-FEEE-4D7C-A0E8-5D5AC5CCA1CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Provausio.Common.Tests", "Provausio.Common.Tests\Provausio.Common.Tests.csproj", "{5D8DED90-73F3-4CC4-BEA0-3729F1136FAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D58F832-FEEE-4D7C-A0E8-5D5AC5CCA1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D58F832-FEEE-4D7C-A0E8-5D5AC5CCA1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D58F832-FEEE-4D7C-A0E8-5D5AC5CCA1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D58F832-FEEE-4D7C-A0E8-5D5AC5CCA1CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8DED90-73F3-4CC4-BEA0-3729F1136FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8DED90-73F3-4CC4-BEA0-3729F1136FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8DED90-73F3-4CC4-BEA0-3729F1136FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8DED90-73F3-4CC4-BEA0-3729F1136FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA9959CC-EA94-48E3-9FF4-E648BC2607FA}
+	EndGlobalSection
+EndGlobal
