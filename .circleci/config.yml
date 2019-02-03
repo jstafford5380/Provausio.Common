@@ -2,10 +2,14 @@ version: 2
 jobs:
     build:
       docker:
-        - image: docker:17.05.0-ce-git
+        - image: microsoft/dotnet:2.2-sdk
+        #- image: docker:17.05.0-ce-git
       steps:
         - checkout  
-        - setup_remote_docker
         - run:
-            name: Build and Deploy
-            command: docker build -t build-only --build-arg build_number=${CIRCLE_BUILD_NUM} --build-arg nuget_key=${PROV_NUGET_KEY} .
+            name: test env
+            command: dotnet --info
+        #- setup_remote_docker
+        # - run:
+        #     name: Build and Deploy
+        #     command: docker build -t build-only --build-arg build_number=${CIRCLE_BUILD_NUM} --build-arg nuget_key=${PROV_NUGET_KEY} .
