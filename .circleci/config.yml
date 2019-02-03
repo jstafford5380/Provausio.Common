@@ -6,4 +6,6 @@ jobs:
       steps:
         - checkout  
         - setup_remote_docker
-        - docker build -t build-only --build-arg build_number=${CIRCLE_BUILD_NUM} --build-arg nuget_key=${PROV_NUGET_KEY}
+        - run:
+            name: Build and Deploy
+            command: docker build -t build-only --build-arg build_number=${CIRCLE_BUILD_NUM} --build-arg nuget_key=${PROV_NUGET_KEY}
