@@ -81,6 +81,7 @@ namespace Provausio.Common.Comparison
 
         private static IEnumerable<PropertyInfo> GetProperties<T>()
         {
+            var type = typeof(T);
             return typeof(T)
                 .GetProperties(BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Public);
         }

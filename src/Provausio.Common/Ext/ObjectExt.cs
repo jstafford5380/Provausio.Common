@@ -7,9 +7,9 @@ using Provausio.Common.Comparison;
 
 namespace Provausio.Common.Ext
 {
-    [ExcludeFromCodeCoverage]
     public static class ObjectExt
     {
+        [ExcludeFromCodeCoverage]
         public static T FindAttribute<T>(this object target)
             where T : Attribute
         {
@@ -18,6 +18,7 @@ namespace Provausio.Common.Ext
             return attribute as T;
         }
 
+        [ExcludeFromCodeCoverage]
         public static IEnumerable<T> FindAttributes<T>(this object target)
         {
             var targetType = target.GetType();
@@ -29,7 +30,8 @@ namespace Provausio.Common.Ext
             return attributes;
         }
 
-        public static ObjectChanges Compare(this object oldObject, object newObject)
+        public static ObjectChanges Compare<T>(this T oldObject, T newObject)
+            where T : class, new()
         {
             return ObjectDiff.Compare(oldObject, newObject);
         }
