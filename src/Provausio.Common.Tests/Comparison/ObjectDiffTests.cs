@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
+using System.Threading;
 using Provausio.Common.Comparison;
 using Provausio.Common.Ext;
 using Xunit;
@@ -27,6 +25,31 @@ namespace Provausio.Common.Tests.Comparison
             Assert.Equal(11, change.PreviousValue);
             Assert.Equal(12, change.NewValue);
             Assert.Equal(DiffChangeType.ObjectUpdated, diff.DiffChangeType);
+        }
+
+        [Fact]
+        public void Compare_NewObjectIsNull_ObjectDeleted()
+        {
+            // arrange
+            var obj1 = new TestObject { Prop1 = "foo", Prop2 = 11 };
+
+            // act
+            var diff = ObjectDiff.Compare(obj1, null);
+
+            // assert
+            Assert.Equal(DiffChangeType.ObjectDeleted, diff.DiffChangeType);
+        }
+
+        [Fact]
+        public void Compare_BothObjectNull_IsNoOp()
+        {
+            // arrange
+
+            // act
+            var diff = ObjectDiff.Compare<TestObject>(null, null);
+
+            // assert
+            Assert.Equal(DiffChangeType.NoOp, diff.DiffChangeType);
         }
 
         [Fact]

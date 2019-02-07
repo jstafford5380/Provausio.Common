@@ -12,12 +12,7 @@
         /// Locale (e.g. en-US)
         /// </summary>
         public const string Locale = @"[a-z]{2}-[A-Z]{2}";
-
-        /// <summary>
-        /// Digital Air Strike acceptable phone number format
-        /// </summary>
-        public const string DASPhoneUS = @" ^\+?\d{11}$";
-
+        
         /// <summary>
         /// Email address (RFC 5322)
         /// </summary>

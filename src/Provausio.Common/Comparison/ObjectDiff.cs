@@ -17,6 +17,9 @@ namespace Provausio.Common.Comparison
         public static ObjectChanges Compare<T>(T oldObject, T newObject)
             where T : class, new()
         {
+            if (oldObject == null && newObject == null)
+                return new ObjectChanges(new List<ObjectChange>()) {DiffChangeType = DiffChangeType.NoOp};
+
             ObjectChanges changes;
             if (oldObject == null || newObject == null)
             {

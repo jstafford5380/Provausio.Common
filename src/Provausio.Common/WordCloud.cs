@@ -6,6 +6,7 @@ namespace Provausio.Common
 {
     public class WordCloud : Dictionary<string, int>
     {
+        /// <inheritdoc />
         /// <summary>
         /// Creates a word cloud consisting of words and their counts.
         /// </summary>
@@ -13,6 +14,7 @@ namespace Provausio.Common
         public WordCloud(params string[] content)
             : this(new List<string>(), 3, content) { }
 
+        /// <inheritdoc />
         /// <summary>
         /// Creates a word cloud consisting of words and their counts.
         /// </summary>
@@ -21,13 +23,14 @@ namespace Provausio.Common
         public WordCloud(IReadOnlyCollection<string> stopWords, params string[] content)
             : this(stopWords, 3, content) { }
 
+        /// <inheritdoc />
         /// <summary>
         /// Creates a word cloud consisting of words and their counts.
         /// </summary>
         /// <param name="content">The string content that will be evaluated.</param>
         /// <param name="stopWords">A list of words that will be excluded from the cloud.</param>
-        /// <param name="wordLengthThreshhold">The length of any particular word must be greater than this value to be included in the word cloud.</param>
-        public WordCloud(IReadOnlyCollection<string> stopWords, int wordLengthThreshhold, params string[] content)
+        /// <param name="wordLengthThreshold">The length of any particular word must be greater than this value to be included in the word cloud.</param>
+        public WordCloud(IReadOnlyCollection<string> stopWords, int wordLengthThreshold, params string[] content)
         {
             var wordCounts = new Dictionary<string, int>();
             foreach (var line in content)
@@ -37,7 +40,7 @@ namespace Provausio.Common
                     .Split(' ')
                     .Where(word =>
                         !string.IsNullOrEmpty(word)
-                        && word.Length > wordLengthThreshhold
+                        && word.Length > wordLengthThreshold
                         && !word.IsNumeric()
                         && !stopWords.Contains(word))
                     .ToList();
