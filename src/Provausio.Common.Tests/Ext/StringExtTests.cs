@@ -231,5 +231,18 @@ namespace Provausio.Common.Tests.Ext
             // assert
             Assert.Equal("hel", result);
         }
+
+        [Fact]
+        public void ToString_CharacterCollection_StringIsCorrect()
+        {
+            // arrange
+            var input = new[] {'f', 'o', 'o'};
+
+            // act
+            var str = input.BuildString();
+
+            // assert
+            Assert.Equal("foo", str);
+        }
     }
 }

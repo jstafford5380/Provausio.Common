@@ -148,6 +148,16 @@ namespace Provausio.Common.Ext
             var replacer = new TokenReplacer();
             return replacer.Render(input, resourceFile);
         }
+
+        /// <summary>
+        /// Creates a new string from a collection of characters
+        /// </summary>
+        /// <param name="characters"></param>
+        /// <returns></returns>
+        public static string BuildString(this IEnumerable<char> characters)
+        {
+            return new string(characters.ToArray());
+        }
     }
 
     public interface IObjectStringFormatter
